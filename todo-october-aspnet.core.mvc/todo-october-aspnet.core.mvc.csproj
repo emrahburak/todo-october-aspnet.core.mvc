@@ -21,9 +21,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.11.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\Todo\" />
-  </ItemGroup>
-
+  <Target Name="Tailwind" BeforeTargets="Build">
+    <Exec Command="npm run style:build"/>
+  </Target>
+  
 </Project>

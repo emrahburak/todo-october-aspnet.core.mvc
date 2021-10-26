@@ -1,0 +1,18 @@
+{
+  "name": "todo-october-aspnet.core.mvc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "style:build": "npx tailwind build -i ./wwwroot/css/style.css -o ./wwwroot/css/site.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.3.7",
+    "postcss": "^8.3.11",
+    "tailwindcss": "^2.2.17"
+  }
+}

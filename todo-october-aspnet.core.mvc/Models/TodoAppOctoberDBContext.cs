@@ -15,5 +15,13 @@ namespace todo_october_aspnet.core.mvc.Models
 
 
         public DbSet<Todo> Todos { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Todo>().HasKey(x => x.Id);
+            modelBuilder.Entity<Todo>().Property(x => x.Id).UseIdentityColumn();
+            modelBuilder.Entity<Todo>().Property(x => x.CreatedAt).HasComputedColumnSql("GetUtcDate()");
+                
+        }
     }
 }
