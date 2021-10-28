@@ -3,7 +3,7 @@ module.exports = {
     mode:"jit",
     purge: [
         './Views/**/*.{html,cshtml}',
-        './wwwroot/**/*.{js,jsx,ts,tsx,vue}',
+        './Pages/**/*.cshtml',
     ],
   darkMode: false, // or 'media' or 'class'
   theme: {

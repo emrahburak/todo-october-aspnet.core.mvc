@@ -7,12 +7,18 @@
 
     <title></title>
 </head>
-<body class="bg-gray-700 ">
+<body class="bg-gray-200 ">
+    <header>
+        <div class="container p-4 mx-auto">
+            <h1 class="text-center text-2xl font-bold">Dotnet Core Todo App</h1>
+        </div>
+    </header>
     <div>
-        @RenderBody()
+
+        <partial name="~/Views/Todo/Create.cshtml"/>
+        <main class="p-4">
+            @RenderBody()
+        </main>
     </div>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

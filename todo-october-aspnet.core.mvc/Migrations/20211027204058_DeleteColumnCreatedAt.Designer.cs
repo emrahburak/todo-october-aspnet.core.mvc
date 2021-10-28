@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using todo_october_aspnet.core.mvc.Models;
 
 namespace todo_october_aspnet.core.mvc.Migrations
 {
     [DbContext(typeof(TodoAppOctoberDBContext))]
-    partial class TodoAppOctoberDBContextModelSnapshot : ModelSnapshot
+    [Migration("20211027204058_DeleteColumnCreatedAt")]
+    partial class DeleteColumnCreatedAt
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

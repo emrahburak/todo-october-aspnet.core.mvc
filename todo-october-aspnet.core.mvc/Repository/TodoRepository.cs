@@ -18,7 +18,7 @@ namespace todo_october_aspnet.core.mvc.Repository
             _dbSet = _context.Set<Todo>();
         }
 
-        public async Task<Todo> AddEntity(Todo todo)
+        public async Task<Todo> AddAsync(Todo todo)
         {
             await _dbSet.AddAsync(todo);
             await _context.SaveChangesAsync();
@@ -27,18 +27,18 @@ namespace todo_october_aspnet.core.mvc.Repository
 
         public void Delete(int Id)
         {
-            var todo = GetById(Id).Result;
+            var todo = GetByIdAsync(Id).Result;
             _dbSet.Remove(todo);
             _context.SaveChanges();
         }
 
-        public async Task<IEnumerable<Todo>> GetAll()
+        public async Task<IEnumerable<Todo>> GetAllAsync()
         {
             return await _dbSet.ToListAsync();
 
         }
 
-        public async  Task<Todo> GetById(int Id)
+        public async  Task<Todo> GetByIdAsync(int Id)
         {
             return await _dbSet.FindAsync(Id);
         }

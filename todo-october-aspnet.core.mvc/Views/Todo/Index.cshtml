@@ -1,8 +1,23 @@
-﻿
+﻿@model List<Todo>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout1.cshtml";
 }
 
-<h1>Index</h1>
+
+<section class="max-w-screen-md mx-auto">
+    @foreach (var item in Model)
+    {
+        <div class="flex justify-between p-4 mb-3 bg-white rounded-xl shadow">
+
+            <div class="title">@item.Title</div>
+            <form asp-action="Delete" asp-route-id="@item.Id" method="post">
+                <button type"submit"  class="text-red-500">Delete</button>
+            </form>
+        </div>
+
+    }
+</section>
+
+
 

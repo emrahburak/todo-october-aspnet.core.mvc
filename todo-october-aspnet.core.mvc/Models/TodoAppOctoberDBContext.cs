@@ -20,7 +20,7 @@ namespace todo_october_aspnet.core.mvc.Models
         {
             modelBuilder.Entity<Todo>().HasKey(x => x.Id);
             modelBuilder.Entity<Todo>().Property(x => x.Id).UseIdentityColumn();
-            modelBuilder.Entity<Todo>().Property(x => x.CreatedAt).HasComputedColumnSql("GetUtcDate()");
+            modelBuilder.Entity<Todo>().Property(x => x.Title).HasMaxLength(100);
                 
         }
     }
